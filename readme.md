@@ -43,23 +43,71 @@ var filter = [
 #### inNonEmpty() method
 ```sh
 if (keywordFilter.isNonEmpty(testVariable)) {
-    // next statement if non empty
+    // next statement if, testVariable is non empty
 } else {
-    // next statement if the testVariable is empty
+    // next statement if, testVariable is empty
 }
 ```
 
 ### includes() method
 ```sh
 if (keywordFilter.includes(testVariable, keyword) {
-    // next statement if $testVariable contains $keyword
+    // next statement if, testVariable contains keyword
 } else {
-    // next statement if $testVariable does not contains $keyword
+    // next statement if, testVariable does not contains keyword
 }
 ```
 
 ### keywordFilter() method
 ```sh
 var filteredUsers = keywordFilter.keywordFilter(dataSet, filter);
+// next statement using filtered users
+```
+
+### Typescript
+```typescript
+import keywordFilter from 'smc-keyword-filter';
+
+const testVariable = \<Assignment Statement\>;
+const keyword = 'your keyword'
+const dataSet = [
+    {
+        name: 'sampath',
+        age: 25
+    },
+    {
+        name: 'sandaruwan',
+        age: 24
+    },
+];
+const filter = [
+    // in case of application, if user don't want to filter using name, this element may undefined
+    { key: 'name', value: name_filter_keyword },
+    // in case of application, if user don't want to filter using age, this element may undefined
+    { key: 'age', value: age_filter_keyword }
+];
+```
+
+#### inNonEmpty() method
+```sh
+if (keywordFilter.isNonEmpty(testVariable)) {
+    // next statement if, testVariable is non empty
+} else {
+    // next statement if, testVariable is empty
+}
+```
+
+### includes() method
+```sh
+if (keywordFilter.includes(testVariable, keyword) {
+    // next statement if, testVariable contains keyword
+} else {
+    // next statement if, testVariable does not contains keyword
+}
+```
+
+### keywordFilter() method
+```sh
+const filteredUsers = keywordFilter.keywordFilter(dataSet, filter);
 // next statement using filtered users
 ```

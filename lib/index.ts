@@ -3,7 +3,7 @@ class CommonService {
    * check whether any value given contains some value itself. If the values passes is undefined or null or
    * an empty ('') value, a false may be returned. Otherwise true.
    * 
-   * @param value {String or Number} the value we going to check
+   * @param value the value we going to check
    */
   public isNonEmpty(value: String | Number) {
     return (
@@ -17,8 +17,8 @@ class CommonService {
    * this method check whether a given larger string (mainString) contains a smaller string (subString) given.
    * if mainString contains subSting, true will be returned and otherwise false.
    * 
-   * @param mainString {string} the larger string. Most probably the value we considering to filter
-   * @param subString  {string} the smaller string. Most probably thr keyword we going to filter by
+   * @param mainString the larger string. Most probably the value we considering to filter
+   * @param subString the smaller string. Most probably thr keyword we going to filter by
    */
   public includes(mainString: string, subString: string): boolean {
     if (mainString.trim() && subString !== NaN.toString()) {
@@ -31,8 +31,8 @@ class CommonService {
   /**
    * filter a given array of objects according to a filter given as an array of key value pairs
    * 
-   * @param allData {any[]} any king of object array. return type also may this type.
-   * @param filters {KeyValuePair[]} set of filters
+   * @param allData any type of object array. return type also may this type of array
+   * @param filters set of filters
    */
   public keywordFilter(
     allData: any[],
@@ -110,11 +110,6 @@ class CommonService {
     } else {
       return [];
     }
-  }
-
-  public titleCase(input: string): string {
-    return input.length === 0 ? '' :
-      input.replace(/\w\S*/g, (txt => txt[0].toUpperCase() + txt.substr(1).toLowerCase()));
   }
 }
 
