@@ -1,7 +1,7 @@
 {
-  "name": "smc-uuid-generator",
+  "name": "smc-keyword-filter",
   "version": "1.0.0",
-  "description": "128 digits uuid generator",
+  "description": "Some of most useful simple methods in REST API writing. keywordFilter, includes and isNonEmpty.",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
