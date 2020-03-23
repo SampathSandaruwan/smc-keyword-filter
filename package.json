@@ -1,0 +1,24 @@
+{
+  "name": "smc-uuid-generator",
+  "version": "1.0.0",
+  "description": "128 digits uuid generator",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "tsc && node dist/test",
+    "build": "tsc"
+  },
+  "keywords": [
+    "uuid",
+    "smc",
+    "angular",
+    "ivy",
+    "node",
+    "javascript"
+  ],
+  "author": "Sampath Sandaruwan",
+  "license": "ISC",
+  "types": "dist/index.d.ts",
+  "dependencies": {
+    "chai": "^4.2.0"
+  }
+}
