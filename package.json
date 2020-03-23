@@ -4,12 +4,13 @@
   "description": "128 digits uuid generator",
   "main": "dist/index.js",
   "scripts": {
-    "test": "tsc && node dist/test",
     "build": "tsc"
   },
   "keywords": [
-    "uuid",
     "smc",
+    "keyword",
+    "filter",
+    "empty",
     "angular",
     "ivy",
     "node",

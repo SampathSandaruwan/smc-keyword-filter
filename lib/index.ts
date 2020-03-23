@@ -29,7 +29,7 @@ class CommonService {
   }
 
   /**
-   * filter a given array of objects according to a filter given as an array of kry value pairs
+   * filter a given array of objects according to a filter given as an array of key value pairs
    * 
    * @param allData {any[]} any king of object array. return type also may this type.
    * @param filters {KeyValuePair[]} set of filters
