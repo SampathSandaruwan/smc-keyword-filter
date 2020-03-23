@@ -4,7 +4,8 @@
   "description": "128 digits uuid generator",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "test": "tsc && node dist/test"
   },
   "keywords": [
     "smc",

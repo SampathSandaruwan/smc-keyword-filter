@@ -20,7 +20,7 @@ class CommonService {
    * @param mainString {string} the larger string. Most probably the value we considering to filter
    * @param subString  {string} the smaller string. Most probably thr keyword we going to filter by
    */
-  public isIncludes(mainString: string, subString: string): boolean {
+  public includes(mainString: string, subString: string): boolean {
     if (mainString.trim() && subString !== NaN.toString()) {
       return mainString.toLowerCase().includes(subString.trim().toLowerCase());
     } else {
@@ -52,7 +52,6 @@ class CommonService {
           // allData array may be analyzed one by one, and elements which satisfy conditions may be
           // pushed into this array. finally it may be returned.
           const ret: any[] = [];
-          console.log(filters.length);
 
           // Filter items one bu one
           allData.forEach(data => {
@@ -82,7 +81,7 @@ class CommonService {
                     // also may non-empty.
                     this.isNonEmpty(dataValues[dataKeyIndex]) &&
                     // the data value is agree with given filter value.
-                    this.isIncludes(
+                    this.includes(
                       dataValues[dataKeyIndex].toString(),
                       filter.value.toString()
                     )

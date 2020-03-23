@@ -13,9 +13,9 @@ declare class CommonService {
      * @param mainString {string} the larger string. Most probably the value we considering to filter
      * @param subString  {string} the smaller string. Most probably thr keyword we going to filter by
      */
-    isIncludes(mainString: string, subString: string): boolean;
+    includes(mainString: string, subString: string): boolean;
     /**
-     * filter a given array of objects according to a filter given as an array of kry value pairs
+     * filter a given array of objects according to a filter given as an array of key value pairs
      *
      * @param allData {any[]} any king of object array. return type also may this type.
      * @param filters {KeyValuePair[]} set of filters

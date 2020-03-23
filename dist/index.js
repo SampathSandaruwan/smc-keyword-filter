@@ -21,7 +21,7 @@ var CommonService = /** @class */ (function () {
      * @param mainString {string} the larger string. Most probably the value we considering to filter
      * @param subString  {string} the smaller string. Most probably thr keyword we going to filter by
      */
-    CommonService.prototype.isIncludes = function (mainString, subString) {
+    CommonService.prototype.includes = function (mainString, subString) {
         if (mainString.trim() && subString !== NaN.toString()) {
             return mainString.toLowerCase().includes(subString.trim().toLowerCase());
         }
@@ -30,7 +30,7 @@ var CommonService = /** @class */ (function () {
         }
     };
     /**
-     * filter a given array of objects according to a filter given as an array of kry value pairs
+     * filter a given array of objects according to a filter given as an array of key value pairs
      *
      * @param allData {any[]} any king of object array. return type also may this type.
      * @param filters {KeyValuePair[]} set of filters
@@ -50,7 +50,6 @@ var CommonService = /** @class */ (function () {
                     // allData array may be analyzed one by one, and elements which satisfy conditions may be
                     // pushed into this array. finally it may be returned.
                     var ret_1 = [];
-                    console.log(filters.length);
                     // Filter items one bu one
                     allData.forEach(function (data) {
                         if (data && data !== null) {
@@ -74,7 +73,7 @@ var CommonService = /** @class */ (function () {
                                 // also may non-empty.
                                 _this.isNonEmpty(dataValues_1[dataKeyIndex]) &&
                                     // the data value is agree with given filter value.
-                                    _this.isIncludes(dataValues_1[dataKeyIndex].toString(), filter.value.toString()))) {
+                                    _this.includes(dataValues_1[dataKeyIndex].toString(), filter.value.toString()))) {
                                     // matched count should be incremented.
                                     matches_1++;
                                 }
