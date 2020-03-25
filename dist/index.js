@@ -10,7 +10,7 @@ var CommonService = /** @class */ (function () {
      * @param value the value we going to check
      */
     CommonService.prototype.isNonEmpty = function (value) {
-        return ((typeof value !== 'undefined' &&
+        return ((value !== undefined &&
             value !== null &&
             value.toString().trim() !== '' &&
             value.toString().trim() !== NaN.toString()));

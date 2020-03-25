@@ -17,6 +17,12 @@ if (index_1.default.isNonEmpty('smc keyword filter')) {
 else {
     console.log('Test \'smc keyword filter\': Empty');
 }
+if (index_1.default.isNonEmpty(false)) {
+    console.log('Test boolean - false: Non empty');
+}
+else {
+    console.log('Test  boolean - false: Empty');
+}
 console.log('\x1B[33m\nTest includes() method\x1B[37m');
 if (index_1.default.includes('smc keyword filter', 'test')) {
     console.log('Test \'smc keyword filter\' with \'test\': Includes');

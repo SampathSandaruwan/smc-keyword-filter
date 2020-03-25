@@ -8,7 +8,7 @@ class CommonService {
   public isNonEmpty(value: String | Number | Boolean) {
     return (
       (
-        typeof value !== 'undefined' &&
+        value !== undefined &&
         value !== null &&
         value.toString().trim() !== '' &&
         value.toString().trim() !== NaN.toString()

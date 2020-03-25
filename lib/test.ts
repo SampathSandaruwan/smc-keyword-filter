@@ -11,6 +11,11 @@ if (keywordFilter.isNonEmpty('smc keyword filter')) {
 } else {
     console.log('Test \'smc keyword filter\': Empty');
 }
+if (keywordFilter.isNonEmpty(false)) {
+    console.log('Test boolean - false: Non empty');
+} else {
+    console.log('Test  boolean - false: Empty');
+}
 
 console.log('\x1B[33m\nTest includes() method\x1B[37m');
 if (keywordFilter.includes('smc keyword filter', 'test')) {
