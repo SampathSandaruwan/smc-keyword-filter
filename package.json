@@ -11,6 +11,8 @@
     "smc",
     "keyword",
     "filter",
+    "isNonEmpty",
+    "includes test",
     "empty",
     "angular",
     "ivy",

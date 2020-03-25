@@ -7,19 +7,20 @@ var CommonService = /** @class */ (function () {
      * check whether any value given contains some value itself. If the values passes is undefined or null or
      * an empty ('') value, a false may be returned. Otherwise true.
      *
-     * @param value {String or Number} the value we going to check
+     * @param value the value we going to check
      */
     CommonService.prototype.isNonEmpty = function (value) {
-        return (value &&
+        return ((typeof value !== 'undefined' &&
             value !== null &&
-            value.toString().trim() !== '');
+            value.toString().trim() !== '' &&
+            value.toString().trim() !== NaN.toString()));
     };
     /**
      * this method check whether a given larger string (mainString) contains a smaller string (subString) given.
      * if mainString contains subSting, true will be returned and otherwise false.
      *
-     * @param mainString {string} the larger string. Most probably the value we considering to filter
-     * @param subString  {string} the smaller string. Most probably thr keyword we going to filter by
+     * @param mainString the larger string. Most probably the value we considering to filter
+     * @param subString the smaller string. Most probably thr keyword we going to filter by
      */
     CommonService.prototype.includes = function (mainString, subString) {
         if (mainString.trim() && subString !== NaN.toString()) {
@@ -32,8 +33,8 @@ var CommonService = /** @class */ (function () {
     /**
      * filter a given array of objects according to a filter given as an array of key value pairs
      *
-     * @param allData {any[]} any king of object array. return type also may this type.
-     * @param filters {KeyValuePair[]} set of filters
+     * @param allData any type of object array. return type also may this type of array
+     * @param filters set of filters
      */
     CommonService.prototype.keywordFilter = function (allData, filters) {
         var _this = this;
@@ -99,10 +100,6 @@ var CommonService = /** @class */ (function () {
         else {
             return [];
         }
-    };
-    CommonService.prototype.titleCase = function (input) {
-        return input.length === 0 ? '' :
-            input.replace(/\w\S*/g, (function (txt) { return txt[0].toUpperCase() + txt.substr(1).toLowerCase(); }));
     };
     return CommonService;
 }());
