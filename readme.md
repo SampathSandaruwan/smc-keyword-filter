@@ -1,6 +1,6 @@
 # SMC KEYWORD FILTER
 A Node.js module that consist of several commonly useful methods. 
-### isNonEmpty(value: String | Number): boolean
+### isNonEmpty(value: String | Number | Boolean): boolean
 > Check whether the value provided is a non-empty value.
 > If it is an empty value (undefined one, null one or an empty one) provided,
 > a boolean false may returned.
