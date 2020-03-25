@@ -5,9 +5,9 @@ class CommonService {
    * 
    * @param value the value we going to check
    */
-  public isNonEmpty(value: String | Number) {
+  public isNonEmpty(value: String | Number | Boolean) {
     return (
-      value &&
+      value !== undefined &&
       value !== null &&
       value.toString().trim() !== ''
     );
