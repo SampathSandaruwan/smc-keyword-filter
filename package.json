@@ -1,6 +1,6 @@
 {
   "name": "smc-keyword-filter",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Some of most useful simple methods in REST API writing. keywordFilter, includes and isNonEmpty.",
   "main": "dist/index.js",
   "scripts": {
