@@ -5,7 +5,7 @@ declare class CommonService {
      *
      * @param value the value we going to check
      */
-    isNonEmpty(value: String | Number | Boolean): boolean;
+    isNonEmpty(value: string | number | boolean): boolean;
     /**
      * this method check whether a given larger string (mainString) contains a smaller string (subString) given.
      * if mainString contains subSting, true will be returned and otherwise false.
@@ -23,8 +23,8 @@ declare class CommonService {
     keywordFilter(allData: any[], filters: KeyValuePair[]): any[];
 }
 interface KeyValuePair {
-    key: String;
-    value: String;
+    key: string;
+    value: string;
 }
 declare const _default: CommonService;
 export default _default;

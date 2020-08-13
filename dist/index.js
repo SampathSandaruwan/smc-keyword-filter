@@ -10,10 +10,10 @@ var CommonService = /** @class */ (function () {
      * @param value the value we going to check
      */
     CommonService.prototype.isNonEmpty = function (value) {
-        return ((value !== undefined &&
+        return (value !== undefined &&
             value !== null &&
             value.toString().trim() !== '' &&
-            value.toString().trim() !== NaN.toString()));
+            value.toString().trim() !== NaN.toString());
     };
     /**
      * this method check whether a given larger string (mainString) contains a smaller string (subString) given.
@@ -23,12 +23,7 @@ var CommonService = /** @class */ (function () {
      * @param subString the smaller string. Most probably thr keyword we going to filter by
      */
     CommonService.prototype.includes = function (mainString, subString) {
-        if (mainString.trim() && subString !== NaN.toString()) {
-            return mainString.toLowerCase().includes(subString.trim().toLowerCase());
-        }
-        else {
-            return false;
-        }
+        return !!mainString.trim() && subString !== NaN.toString() && mainString.toLowerCase().includes(subString.toLowerCase());
     };
     /**
      * filter a given array of objects according to a filter given as an array of key value pairs
@@ -38,10 +33,10 @@ var CommonService = /** @class */ (function () {
      */
     CommonService.prototype.keywordFilter = function (allData, filters) {
         var _this = this;
-        // allData should be an arrays which it's length is greater than 1
+        // allData should be an arrays which it's length is greater than 0
         // Otherwise an empty array may be returned
-        if (allData && allData !== null && allData.length) {
-            // filters should be an arrays which it's length is greater than 1
+        if (allData && allData !== null && allData.length > 0) {
+            // filters should be an arrays which it's length is greater than 0
             // Otherwise allData array may be returned without filtering
             if (filters && filters !== null && filters.length > 0) {
                 // Remove undefined, null, and empty filters
@@ -50,44 +45,34 @@ var CommonService = /** @class */ (function () {
                 if (filters.length > 0) {
                     // allData array may be analyzed one by one, and elements which satisfy conditions may be
                     // pushed into this array. finally it may be returned.
-                    var ret_1 = [];
-                    // Filter items one bu one
-                    allData.forEach(function (data) {
+                    var payload = allData.filter(function (data) {
                         if (data && data !== null) {
-                            // Matches count refers to count the number of matched field with given filter.
-                            // This count should be equal to length of filters to return that particular data
-                            // object as an result. Otherwise that particular data object may be rejected.
-                            var matches_1 = 0;
                             // The data object considering this loop cycle may be broken down into key value
                             // pairs (two separated arrays with corresponding indices) for further calculations.
                             var dataKeys_1 = Object.keys(data);
                             var dataValues_1 = Object.values(data);
                             // consider filters one by one.
-                            filters.forEach(function (filter) {
+                            var matches = filters.filter(function (filter) {
                                 // first have to find the corresponding index of key, in data object. It should be
                                 // higher than -1 if the filter is a valid one.
                                 var dataKeyIndex = dataKeys_1.indexOf(filter.key);
-                                if ((
+                                return ((
                                 // the index found is valid,
                                 dataKeyIndex > -1) && (
                                 // all the filters above are non-empty. Hence the corresponding values
                                 // also may non-empty.
                                 _this.isNonEmpty(dataValues_1[dataKeyIndex]) &&
                                     // the data value is agree with given filter value.
-                                    _this.includes(dataValues_1[dataKeyIndex].toString(), filter.value.toString()))) {
-                                    // matched count should be incremented.
-                                    matches_1++;
-                                }
+                                    _this.includes(dataValues_1[dataKeyIndex].toString(), filter.value.toString())));
                             });
-                            // as we discussed earlier, is the matches count equals with filter size, that
-                            // particular data object may considered as matched
-                            if (matches_1 === filters.length) {
-                                ret_1.push(data);
-                            }
+                            return matches.length === filters.length;
                         }
-                    }); // end of dataAll.forEach
+                        else {
+                            return false;
+                        }
+                    });
                     // finally return the array of filtered data objects
-                    return ret_1;
+                    return payload;
                 }
                 else {
                     return allData;
